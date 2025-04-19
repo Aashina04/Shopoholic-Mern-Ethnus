@@ -10,7 +10,13 @@ const app = express();
 const cors = require('cors');
 const router = require('./Routes/router');
 
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://shopoholic-lemon.vercel.app', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials:true
+}));
+// app.use(cors());
 app.use(express.json());
 app.use(router);
 
