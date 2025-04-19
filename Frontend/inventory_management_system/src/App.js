@@ -6,6 +6,8 @@ import InsertProduct from './components/InsertProduct'
 import UpdateProduct from './components/UpdateProduct';
 import About from './components/About';
 import Footer from './components/Footer';
+import SignIn from './components/SignIn';
+
 
 import {
   BrowserRouter as Router,
@@ -23,14 +25,14 @@ function App() {
 
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          {/* Default route now points to SignIn */}
+          <Route exact path="/" element={<SignIn />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/insertproduct" element={<InsertProduct />} />
           <Route path="/updateproduct/:id" element={<UpdateProduct />} />
           <Route path="/about" element={<About />} />
-
         </Routes>
-
       </Router>
      <Footer/>
 
